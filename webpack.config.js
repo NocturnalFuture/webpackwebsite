@@ -16,6 +16,21 @@ module.exports = {
             test: /\.css$/i,
             use: ["style-loader", "css-loader"],
           },
+          {
+            test: /\.html$/i,
+         
+            use: ["html-loader"]
+          }, 
+          {
+            test: /\.(png|svg|jpe?g|gif)$/,
+            use: {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "imgs"
+              }
+            }
+          }
         ],
       },
 }
